@@ -1,10 +1,13 @@
+'use strict'
+let form = document.getElementById("formID");
+let employee=[];
 function Employee(employeeID,fullName,department,level,imageURL){
     this.employeeID=employeeID;
     this.fullName=fullName;
     this.department=department;
     this.level=level;
     this.imageURL=imageURL;
-
+    employee.push(this);
 }
 
 Employee.prototype.salary=function(){
@@ -37,15 +40,39 @@ let employee6= new Employee(1005,"Rana Saleh","Development","Junior","./assets/r
 let employee7= new Employee(1006,"Hadi Ahmad","Finance","Mid-Senior","./assets/hadi.png");
 
 // &nbsp is two add a white space && "<br>" to add a line break
+document.write("This part is for task 7"+"<br>"+"<br>")
 Employee.prototype.render = function () {
     document.write(`The name of the employee: ${this.fullName}  &nbsp &nbsp &nbsp &nbsp   his/her salary :${this.salary()}`);
     document.write("<br>");
     
+    
 }
-employee1.render();
-employee2.render();
-employee3.render();
-employee4.render();
-employee5.render();
-employee6.render();
-employee7.render();
+//use the for loop to render is the best practice
+// employee1.render();
+// employee2.render();
+// employee3.render();
+// employee4.render();
+// employee5.render();
+// employee6.render();
+// employee7.render();
+
+
+for(let i=0;i<employee.length;i++){
+    employee[i].render();
+}
+
+
+
+function uniqueID (){
+    document.write("<br>"+"<br>"+"This part is for task 8");
+   return (document.write("<br>"+"The unique four digits employee id is " + Math.floor(1000 + Math.random() * 9000)));
+}
+ uniqueID();
+ 
+ form.addEventListener("submit", handleSubmit);
+ function handleSubmit(event) {
+    event.preventDefault();
+    console.log(event);
+    
+}
+console.log("kjdha");
