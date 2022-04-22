@@ -29,18 +29,23 @@
     font-style:initial;
     color :black ;
 }
+
 main{
     margin-left: 1rem;
     text-align: justify;
     margin-bottom: 10rem;
+    width: 70%;
+   
     
 }
 
 main h3{
-    text-align: center;
+    text-align:center;
     padding-top: 3px;
     margin-bottom: 15px;
     color: gold;
+   
+
 
 }
 footer{
@@ -55,4 +60,81 @@ footer{
 span{
 color:antiquewhite;
 font-weight: bold;
+}
+
+input[type=text] {
+    width: 50%; 
+    padding: 6px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+}
+
+input[type=submit] {
+    background-color:#E9EFC0;
+    border: 2px solid  #E9D5DA;
+    margin-bottom: 20px;
+  }
+  select {
+      background-color: #B1D8B7;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      width: 50%; 
+      margin-top: 6px;
+  }
+  .form{
+      margin-top: 2rem;
+      margin-bottom: 3rem;
+      margin-left: 3px;
+
+  }
+#cardSection{
+    
+    border:solid #E9D5DA;
+    text-align: center;
+    margin-left:200px;
+    width: 70%;
+    padding: 0cm;
+   
+}
+main p{
+ margin-bottom: 30px;
+ padding: 0px; 
+
+}
+
+
+
+main h6{
+    font-size: 15px;
+    font-weight: lighter;
+    border-bottom: solid #B1D8B7 4px;
+
+
+}
+main img {
+
+    margin-top: 4px;
+ 
+}
+.container{
+    display:block;
+
+}
+#face:hover{
+
+    background-color: lightblue;
+
+}
+#insta:hover{
+
+    background-color: lightpink;
+    
+}
+#whats:hover{
+
+    background-color:lightgreen;
+    
 }

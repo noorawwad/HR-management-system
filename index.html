@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HR system</title>
     <link rel="stylesheet" href="Style/index.css">
+    
 </head>
 
 <body>
-    
+    <!-- This is for the navbar -->
  <header class="header">
     <nav class="navBar">
         <a href="#Home">Home</a>
@@ -18,26 +19,63 @@
         <a href="#ContactUs">ContactUs</a>
        </nav> 
  </header>
+
 <main>
-    <h3>Hello in the information section</h3>
-    <section class="information" id="information">
-        <script src="app.js"></script>
-    </section>
+    <!-- this is for the form  -->
+    
+    <div class="container">
+        <form id="formID">
+
+            <div id="nameDiv" class="input">Full name<br>
+            <input type="text" id="fullName" name="fullName"><br>
+            
+            <div class="input">Choose a Department<br>
+            <select name="Department" id="Department">
+              <option value="Administration">Administration</option>
+              <option value="Marketing">Marketing</option>
+              <option value="Development">Development</option>
+              <option value="Finance">Finance</option>
+            </select>
+            <br><br>
+
+            <div class="input">Choose a Level</label><br>
+            <select name="Level" id="Level">
+              <option value="Junior">Junior</option>
+              <option value="Mid-Senior">Mid-Senior</option>
+              <option value="Senior">Senior</option>
+            </select>
+            <br><br>
+        
+            <div class="input">Image link</label><br>
+            <input type="text" id="image" name="image"><br>
+
+            <input type="submit"  value="Submit"></button>
+
+        </form>
+    </div>
+
+
+    <!-- this is for the card display  -->
+    
+ <section id="cardSection">
+  
+  </section>
+</div>
 </main>
 
 <footer class="footer">
-        <div class="ContactUs" id="ContactUs">
-          <h4>our social media account</h4>
-        
-         <ion-icon id="face" name="logo-facebook"></ion-icon>
-         <ion-icon id="insta" name="logo-instagram"></ion-icon>
-         <ion-icon  id="whats" name="logo-whatsapp"></ion-icon>
-        
-         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-       <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-      </div>
-      <div id="copywrite"> created by<span> Noor awwad </span> at 2022 &copy;</div>
+    <div class="ContactUs" id="ContactUs">
+      <h4>our social media account</h4>
+    
+     <ion-icon id="face" name="logo-facebook"></ion-icon>
+     <ion-icon id="insta" name="logo-instagram"></ion-icon>
+     <ion-icon  id="whats" name="logo-whatsapp"></ion-icon>
+    
+     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  </div>
+  <div id="copywrite"> created by<span> Noor awwad </span> at 2022 &copy;</div>
 </footer>
-
+<script src="./app.js"></script>
 </body>
 </html>
