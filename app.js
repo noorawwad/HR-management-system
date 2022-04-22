@@ -1,5 +1,4 @@
 'use strict'
-let form = document.getElementById("formID");
 let employee=[];
 function Employee(employeeID,fullName,department,level,imageURL){
     this.employeeID=employeeID;
@@ -31,31 +30,60 @@ function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min) ) + min;
   }
 
-let employee1= new Employee(1000,"Ghazi Samer","Administration","Senior","./assets/Ghazi.png");
-let employee2= new Employee(1001,"Lana Ali","Finance","Senior","./assets/lana.png");
-let employee3= new Employee(1002,"Tamara Ayoub","Marketing","Senior","./assets/tamara.png");
-let employee4= new Employee(1003,"Safi Walid","Administration","Mid-Senior","./assets/safi.png");
-let employee5= new Employee(1004,"Omar Zaid","Development","Senior","./assets/omar.png");
-let employee6= new Employee(1005,"Rana Saleh","Development","Junior","./assets/rana.png");
-let employee7= new Employee(1006,"Hadi Ahmad","Finance","Mid-Senior","./assets/hadi.png");
+let employee1= new Employee(1000,"Ghazi Samer","Administration","Senior","./assest/Ghazi.jpg");
+let employee2= new Employee(1001,"Lana Ali","Finance","Senior","./assest/Lana.jpg");
+let employee3= new Employee(1002,"Tamara Ayoub","Marketing","Senior","./assest/Tamara.jpg");
+let employee4= new Employee(1003,"Safi Walid","Administration","Mid-Senior","./assest/Safi.jpg");
+let employee5= new Employee(1004,"Omar Zaid","Development","Senior","./assest/Omar.jpg");
+let employee6= new Employee(1005,"Rana Saleh","Development","Junior","./assest/Rana.jpg");
+let employee7= new Employee(1006,"Hadi Ahmad","Finance","Mid-Senior","./assest/Hadi.jpg");
 
-// &nbsp is two add a white space && "<br>" to add a line break
-document.write("This part is for task 7"+"<br>"+"<br>")
-Employee.prototype.render = function () {
-    document.write(`The name of the employee: ${this.fullName}  &nbsp &nbsp &nbsp &nbsp   his/her salary :${this.salary()}`);
-    document.write("<br>");
-    
-    
+
+
+// This is the begining of task 8
+function uniqueID (){
+   return  Math.floor(1000 + Math.random() * 9000);
 }
-//use the for loop to render is the best practice
-// employee1.render();
-// employee2.render();
-// employee3.render();
-// employee4.render();
-// employee5.render();
-// employee6.render();
-// employee7.render();
+ uniqueID();
 
+
+//  This is the hard part ***********************************************************
+
+
+
+let form = document.getElementById("formID");
+let section=document.getElementById("cardSection");
+   
+   
+Employee.prototype.render = function (){   
+    
+    let imageEl = document.createElement('img');
+    imageEl.width=150;
+    imageEl.src = this.imageURL;
+    section.appendChild(imageEl);
+    
+    let name = document.createElement('h3');
+    name.textContent =`Name :${this.fullName}`;
+    section.appendChild(name);
+     
+    let id = document.createElement('p');
+    id.textContent =`ID -${this.employeeID}`;
+    section.appendChild(id);
+
+    let department = document.createElement('p');
+    department.textContent =`Department:${this.department}`;
+    section.appendChild(department);
+    
+    let level = document.createElement('p');
+    level.textContent =`Level : ${this.level}`;
+    section.appendChild(level);
+
+    let salary = document.createElement("h6");
+    salary.textContent =`salary :${this.salary()}`;
+    section.appendChild(salary);
+    
+
+}
 
 for(let i=0;i<employee.length;i++){
     employee[i].render();
@@ -63,16 +91,26 @@ for(let i=0;i<employee.length;i++){
 
 
 
-function uniqueID (){
-    document.write("<br>"+"<br>"+"This part is for task 8");
-   return (document.write("<br>"+"The unique four digits employee id is " + Math.floor(1000 + Math.random() * 9000)));
-}
- uniqueID();
- 
+
+
  form.addEventListener("submit", handleSubmit);
+ 
+
  function handleSubmit(event) {
     event.preventDefault();
-    console.log(event);
+
+    let fullName=event.target.fullName.value;
+    let department=event.target.Department.value;
+    let level=event.target.Level.value;
+    let img=event.target.image.value;
+    console.log(fullName,department,level,img);
+    if(!fullName||! department||! level|| !img){
+
+        alert("please full all the boxes");
+        return;
+    }
     
+    //i wont to ask why this code isnot working 
+    /*let newEmployee = new newEmployee(imageURL,fullName,id, department,level,)
+    newEmployee.render();*/
 }
-console.log("kjdha");
