@@ -85,9 +85,11 @@ Employee.prototype.render = function (){
 
 }
 
+
+function renderAll() {
 for(let i=0;i<employee.length;i++){
     employee[i].render();
-}
+}}
 
 
  form.addEventListener("submit", handleSubmit);
@@ -102,7 +104,6 @@ for(let i=0;i<employee.length;i++){
     let level=event.target.Level.value;
     let img=event.target.image.value;
     let salary=Employee.prototype.salary();
-    console.log(fullName,department,level,img);
     if(!fullName||! department||! level|| !img){
 
         alert("please full all the boxes");
@@ -111,4 +112,22 @@ for(let i=0;i<employee.length;i++){
     
    let newEmployee=new Employee (id,fullName,department,level,image,salary);
    newEmployee.render();
+   saveData(employee);
 }
+
+function saveData(data) {
+    let stringfiyData = JSON.stringify(data);
+    localStorage.setItem("employee",stringfiyData);
+}
+
+function getData() {
+    let retrievedData = localStorage.getItem("employee");
+   
+    let employeeArray=JSON.parse(retrievedData);
+    if (employeeArray != null){
+    for(let i=0 ;i<employeeArray.length;i++){
+        new Employee(employeeArray[i].employeeID,employeeArray[i].fullName,employeeArray[i].department,employeeArray[i].level,employeeArray[i].imageURL);
+    }
+    renderAll();
+}}
+getData();
