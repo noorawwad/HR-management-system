@@ -41,10 +41,10 @@ let employee7= new Employee(1006,"Hadi Ahmad","Finance","Mid-Senior","./assest/H
 
 
 // This is the begining of task 8
-function uniqueID (){
+Employee.prototype.ID =function(){
    return  Math.floor(1000 + Math.random() * 9000);
-}
- uniqueID();
+};
+
 
 
 //  This is the hard part ***********************************************************
@@ -90,19 +90,18 @@ for(let i=0;i<employee.length;i++){
 }
 
 
-
-
-
  form.addEventListener("submit", handleSubmit);
  
 
  function handleSubmit(event) {
     event.preventDefault();
-
+   
+    let id=Employee.prototype.ID();
     let fullName=event.target.fullName.value;
     let department=event.target.Department.value;
     let level=event.target.Level.value;
     let img=event.target.image.value;
+    let salary=Employee.prototype.salary();
     console.log(fullName,department,level,img);
     if(!fullName||! department||! level|| !img){
 
@@ -110,7 +109,6 @@ for(let i=0;i<employee.length;i++){
         return;
     }
     
-    //i wont to ask why this code isnot working 
-    /*let newEmployee = new newEmployee(imageURL,fullName,id, department,level,)
-    newEmployee.render();*/
+   let newEmployee=new Employee (id,fullName,department,level,image,salary);
+   newEmployee.render();
 }
